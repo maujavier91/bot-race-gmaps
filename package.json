@@ -9,7 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "geolib": "^3.3.3",
+    "gmap-vue": "^2.0.2",
+    "sass": "^1.49.0",
+    "sass-loader": "10.1.1",
+    "vue": "^2.6.11",
+    "vue-browser-geolocation": "^1.8.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
