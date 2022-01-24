@@ -32,7 +32,7 @@
     />
 
 <button class="mapbutton" id="addBot" @click="addNewBot">Agregar Nuevo Bot</button>
-<button class="mapbutton" id="changeDestination" @click="allowNewDestination = true">Cambiar destino</button>
+<button class="mapbutton" id="changeDestination" @click="changeNewDestination">Cambiar destino</button>
 </GmapMap>
 <div>
 <table class="botTable">
@@ -174,7 +174,7 @@ export default {
   methods:{
     changeNewDestination(){
       this.allowNewDestination = true
-      alert('seleccione nuevo destino')
+      window.alert('Haga click en el mapa para seleccionar el nuevo destino y reiniciar la carrera')
     },
     setNewDestination({latLng}){
       if(this.allowNewDestination){
@@ -225,7 +225,7 @@ export default {
     
       this.$refs.mapRef.$mapPromise.then((map) => {
         map.controls[this.google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('addBot'))
-        map.controls[this.google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('changeDestination'))
+        map.controls[this.google.maps.ControlPosition.BOTTOM_CENTER].push(document.getElementById('changeDestination'))
       })
   },
 
@@ -282,8 +282,8 @@ export default {
 
 .map{
 
-  width: 40em;
-  height: 40em;
+  width: 25em;
+  height: 25em;
 
   @media (max-width: 500px) {
     width: 20em;
