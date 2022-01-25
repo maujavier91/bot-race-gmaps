@@ -19,6 +19,7 @@
         :clickable="false"
         :draggable="false"
         :title="m.label"
+        :animation="google && google.maps.Animation.DROP"
         :label="{text: m.label, color: m.color, fontSize: '2em'}"
         :icon="{
             path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
@@ -28,8 +29,24 @@
             strokeWeight: 2,
             scale: 1,
       }"
-
+     
     />
+     <GmapMarker
+        :position="center"
+        :clickable="false"
+        :draggable="false"
+        :title="'Destino'"
+        :animation="google && google.maps.Animation.BOUNCE"
+        :icon="{
+            path: google && google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+            fillColor: '#ff0',
+            fillOpacity: 1,
+            strokeColor: '#000',
+            strokeWeight: 2,
+            scale: 5,
+            
+      }"
+/>
 
 <button class="mapbutton" id="addBot" @click="addNewBot">Agregar Nuevo Bot</button>
 <button class="mapbutton" id="changeDestination" @click="changeNewDestination">Cambiar destino</button>
