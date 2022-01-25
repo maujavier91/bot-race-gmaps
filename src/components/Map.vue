@@ -53,7 +53,7 @@
 <button class="mapbutton" id="addBot" @click="addNewBot">Agregar Nuevo Bot</button>
 <button class="mapbutton" id="changeDestination" @click="changeNewDestination">Cambiar destino</button>
 </GmapMap>
-<div>
+
 <table class="botTable">
   <tr class="botRowHeader">
     <th>Posición</th>
@@ -70,7 +70,7 @@
     <td>{{marker.isCharging?'Cargando':'Activo'}}</td>
   </tr>
 </table>
-</div>
+
     </div>
 
   </div>
@@ -311,5 +311,15 @@ export default {
     height: 20em;
   }
 
+}
+
+table {
+  border-collapse: collapse;
+  width: 40%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: .1em;
 }
 </style>
