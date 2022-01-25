@@ -20,14 +20,16 @@
         :draggable="false"
         :title="m.label"
         :animation="google && google.maps.Animation.DROP"
-        :label="{text: m.label, color: m.color, fontSize: '2em'}"
+        :label="{text: m.label, color: m.color, fontSize: '1.5em'}"
         :icon="{
-            path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+            path: carIcon.icon[4],
             fillColor: m.color,
             fillOpacity: 1,
             strokeColor: '#000',
             strokeWeight: 2,
-            scale: 1,
+            scale: 0.05,
+            anchor: google && new google.maps.Point(carIcon.icon[0]/2,carIcon.icon[1]),
+            labelOrigin: google && new google.maps.Point(carIcon.icon[0]/2,carIcon.icon[1]+100)
       }"
      
     />
@@ -77,6 +79,7 @@
 <script>
 import Bot from './../bot'
 import { gmapApi } from 'gmap-vue'
+import { faCar } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -180,7 +183,8 @@ export default {
       minStep: 50,
       maxStep: 100,
       movementTick: 1000,
-      allowNewDestination: false
+      allowNewDestination: false,
+      carIcon: faCar
     }
 
   },
