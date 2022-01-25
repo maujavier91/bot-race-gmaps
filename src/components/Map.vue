@@ -39,7 +39,7 @@
         :animation="google && google.maps.Animation.BOUNCE"
         :icon="{
             path: google && google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
-            fillColor: '#ff0',
+            fillColor: '#0ff',
             fillOpacity: 1,
             strokeColor: '#000',
             strokeWeight: 2,
