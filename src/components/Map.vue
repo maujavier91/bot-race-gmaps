@@ -53,23 +53,36 @@
 <button class="mapbutton" id="addBot" @click="addNewBot">Agregar Nuevo Bot</button>
 <button class="mapbutton" id="changeDestination" @click="changeNewDestination">Cambiar destino</button>
 </GmapMap>
-
+<div class="infoBoard">
+  <h2>Destino lat: {{center.lat.toFixed(5)}}, lng: {{center.lng.toFixed(5)}} </h2>
+ 
 <table class="botTable">
+  <thead>
   <tr class="botRowHeader">
     <th>Posición</th>
     <th>Nombre</th>
     <th>Distancia</th>
     <th>Bateria</th>
     <th>Status</th>
+    <th>Latitud</th>
+    <th>Longitud</th>
   </tr>
-  <tr class="botRow" v-for="(marker,index) in markers" :key="index">
+  </thead>
+ <tbody>
+     <tr class="botRow" v-for="(marker,index) in markers" :key="index">
     <td>{{index + 1}}</td>
     <td>{{marker.label}}</td>
     <td>{{marker.getDistanceToDestination()}}</td>
     <td>{{marker.battery}}</td>
     <td>{{marker.isCharging?'Cargando':'Activo'}}</td>
+    <td>{{marker.position.lat.toFixed(5)}}</td>
+    <td>{{marker.position.lng.toFixed(5)}}</td>
   </tr>
+ </tbody>
+
 </table>
+</div>
+
 
     </div>
 
@@ -291,7 +304,7 @@ export default {
   }
 }
 
-.botTable .botRow:nth-child(2) {
+.botTable .botRow:first-of-type {
   color: rgb(38, 163, 38);
 }
 .botTable .botRow {
@@ -315,11 +328,19 @@ export default {
 
 table {
   border-collapse: collapse;
-  width: 40%;
+  width: 100%;
+ 
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
 }
 
 td, th {
   border: 1px solid #dddddd;
   padding: .1em;
+}
+.infoBoard{
+  overflow-x: auto;
 }
 </style>
