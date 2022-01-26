@@ -38,23 +38,18 @@ La interfaz debe mostrar un mapa de Google Maps y un recuadro donde se listan lo
 
 ## Project setup
 ```
-npm install
+yarn install
 ```
+Set google maps API KEY in .env file as shown in .env.example
+
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
